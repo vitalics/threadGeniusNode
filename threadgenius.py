@@ -16,18 +16,18 @@ args = parser.parse_args()
 
 if args.getCatalogs:
     file = open(args.getCatalogs + ".json", "w")
-    print 'executing getCatalogs'
+    # print 'executing getCatalogs'
 
     response = tg.list_all_catalogs()
     formattedJson = json.dumps(response, indent=4, sort_keys=True)
     file.write(formattedJson)
     file.close()
 
-    print 'getCatalogs finished successfull'
+    # print 'getCatalogs finished successfull'
 
 if args.catalogName:
-    print args.catalogName
-    print 'executing get catalog by gid'
+    # print args.catalogName
+    # print 'executing get catalog by gid'
     catalog_gid = args.catalogName
     file = open(catalog_gid + '.json', "w")
     response = tg.get_catalog(catalog_gid=catalog_gid)
@@ -35,4 +35,4 @@ if args.catalogName:
     file.write(formattedJson)
     file.close()
 
-    print 'get catalogs by gid finished successfull'
+    # print 'get catalogs by gid finished successfull'
